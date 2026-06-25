@@ -13,7 +13,6 @@ MODEL_DIR = os.path.join(BASE_DIR, "models")
 diabetes_model = joblib.load(
       os.path.join(
         MODEL_DIR,
-        "models",
         "diabetes_model.pkl"
     )
 )
@@ -21,7 +20,6 @@ diabetes_model = joblib.load(
 diabetes_scaler = joblib.load(
      os.path.join(
         MODEL_DIR,
-        "models",
         "diabetes_scaler.pkl"
     )
 )

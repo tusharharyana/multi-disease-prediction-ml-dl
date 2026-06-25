@@ -14,7 +14,6 @@ MODEL_DIR = os.path.join(BASE_DIR, "models")
 heart_model = joblib.load(
    os.path.join(
         MODEL_DIR,
-        "models",
         "heart_model.pkl"
     )
 )
@@ -22,7 +21,6 @@ heart_model = joblib.load(
 heart_scaler = joblib.load(
     os.path.join(
         MODEL_DIR,
-        "models",
         "heart_scaler.pkl"
     )
 )
