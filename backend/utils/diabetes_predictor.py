@@ -1,12 +1,27 @@
+import os
 import joblib
 import numpy as np
 
+BASE_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))
+    )
+)
+
 diabetes_model = joblib.load(
-    "../models/diabetes_model.pkl"
+      os.path.join(
+        BASE_DIR,
+        "models",
+        "diabetes_model.pkl"
+    )
 )
 
 diabetes_scaler = joblib.load(
-    "../models/diabetes_scaler.pkl"
+     os.path.join(
+        BASE_DIR,
+        "models",
+        "diabetes_scaler.pkl"
+    )
 )
 
 

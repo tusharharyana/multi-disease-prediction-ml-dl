@@ -1,12 +1,28 @@
+import os
 import joblib
 import numpy as np
 
+
+BASE_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))
+    )
+)
+
 heart_model = joblib.load(
-    "../models/heart_model.pkl"
+   os.path.join(
+        BASE_DIR,
+        "models",
+        "heart_model.pkl"
+    )
 )
 
 heart_scaler = joblib.load(
-    "../models/heart_scaler.pkl"
+    os.path.join(
+        BASE_DIR,
+        "models",
+        "heasrt_scaler.pkl"
+    )
 )
 
 
