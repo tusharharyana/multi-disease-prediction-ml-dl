@@ -5,7 +5,10 @@ from utils.heart_predictor import predict_heart
 from flask import Flask
 from flask_cors import CORS
 
+from flasgger import Swagger
+
 app = Flask(__name__)
+Swagger(app)
 CORS(app)
 
 @app.route('/')
@@ -16,6 +19,21 @@ def home():
 
 @app.route('/predict/diabetes', methods=['POST'])
 def diabetes_prediction():
+    """
+    Diabetes Prediction API
+    ---
+    tags:
+      - Diabetes
+
+    parameters:
+      - in: body
+        name: body
+        required: true
+
+    responses:
+      200:
+        description: Prediction result
+    """
 
     try:
 
@@ -42,6 +60,21 @@ def diabetes_prediction():
 )
 
 def heart_prediction():
+    """
+    Heart Prediction API
+    ---
+    tags:
+      - Heart
+
+    parameters:
+      - in: body
+        name: body
+        required: true
+
+    responses:
+      200:
+        description: Prediction result
+    """
 
     try:
         data = request.get_json()
